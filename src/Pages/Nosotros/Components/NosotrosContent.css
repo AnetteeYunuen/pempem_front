@@ -1,0 +1,387 @@
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+  
+  }
+  
+  .content-container {
+    display: flex;
+    flex-direction: row-reverse; /* Invertir el orden de los elementos */
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 95%;
+    max-width: 1500px;
+    margin: 0 auto;
+    background-color: #6ec1e4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .left-content {
+    flex: 2;
+    margin-left: 10px; /* Espaciado entre los dos contenedores */
+  }
+  
+  .hero h2 {
+    font-size: 2rem; /* Hacer el texto más grande */
+    color: #ffffff; /* Color blanco */
+    margin-bottom: 20px;
+    text-align: center; /* Centrar el texto */
+    font-weight: bold; /* Hacer el texto más grueso */
+    line-height: 1.3; /* Ajustar la altura de la línea para mejor legibilidad */
+  }
+  
+  .hero h3 {
+    font-size: 4.5rem; /* Hacer el texto más grande */
+    color: #ffffff; /* Color blanco */
+    margin-bottom: .5px;
+    margin-top: .5px;
+    text-align: center; /* Centrar el texto */
+    font-weight: bold; /* Hacer el texto más grueso */
+    line-height: 1.3; /* Ajustar la altura de la línea para mejor legibilidad */
+    
+  }
+  
+  .info-content h4 {
+    font-size: 6rem; /* Hacer el texto más grande */
+    color: #6ec1e4; /* Color blanco */
+    margin-bottom: .5px;
+    margin-top: .5px;
+    text-align: left; 
+    font-weight: bold; /* Hacer el texto más grueso */
+    line-height: 1.3; /* Ajustar la altura de la línea para mejor legibilidad */
+    
+  }
+  
+  .info-content h5 {
+    font-size: 4.5rem; /* Hacer el texto más grande */
+    color: #6ec1e4; /* Color blanco */
+    margin-bottom: .5px;
+    margin-top: .5px;
+    text-align: center; /* Centrar el texto */
+    font-weight: bold; /* Hacer el texto más grueso */
+    line-height: 2; /* Ajustar la altura de la línea para mejor legibilidad */
+     
+    
+  }
+  
+  .info-content2 h5 {
+    font-size: 4.5rem; /* Hacer el texto más grande */
+    color: #ffffff; /* Color blanco */
+    margin-bottom: .5px;
+    margin-top: .5px;
+    text-align: center; /* Centrar el texto */
+    font-weight: bold; /* Hacer el texto más grueso */
+    line-height: 1.3; /* Ajustar la altura de la línea para mejor legibilidad */
+    
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  .additional-info {
+    padding: 40px;
+    background-color: #ffffff !important;
+  }
+  
+  .text-image-container {
+    display: flex;
+    align-items: center; /* Centra el contenido verticalmente */
+    gap: 100px; /* Espacio entre la imagen y el texto */
+  }
+  
+  .text-image-container img {
+    max-width: 500px; /* Controla el tamaño de la imagen */
+    max-height: 400px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    border: 3px solid #ffffff; /* Borde azul */
+    padding: 5px;
+  }
+  
+  .text-image-container .text {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 600px; /* Controla el tamaño máximo del texto */
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .images img {
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Añadir el borde azul y margen alrededor de la imagen */
+    margin: 10px;
+    border: 3px solid #007bff; /* Borde azul */
+    padding: 5px; /* Espaciado dentro de las imágenes */
+    
+  }
+  
+  .imagess img {
+    width: 100%;
+    max-width: 500px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Añadir el borde azul y margen alrededor de la imagen */
+    margin: 10px;
+    border: 3px solid #007bff; /* Borde azul */
+    padding: 5px; /* Espaciado dentro de las imágenes */
+    
+  }
+  
+  .right-content {
+    flex: 1;
+    text-align: left;
+    margin-bottom: 5px;
+  }
+  
+  .right-content h3 {
+    font-size: 3rem; /* Tamaño grande para el subtítulo */
+    color: #ffffff; /* Color blanco para el título */
+    margin-bottom: 20px;
+  }
+  
+  .right-content p {
+    margin-bottom: 20px;
+    font-size: 1.2rem; /* Tamaño moderado para el texto */
+    color: #ffffff; /* Color blanco para el texto */
+  }
+  .main-content-button {
+    padding: 15px 30px !important; /* Forzar el padding */
+    font-size: 1.2rem !important; /* Forzar el tamaño de la fuente */
+    color: #484444;
+    background-color: #ffffff;
+    justify-content: center;
+    border-radius: 5px;
+    cursor: pointer;
+    min-width: 800px !important; /* Asegura un ancho mínimo */
+    min-height: 50px !important; /* Asegura una altura mínima */
+    border: 3px solid #007bff;
+  }
+  
+  
+  .right-content button:hover {
+    background-color: #0056b3;
+  }
+  
+  
+  .hexagons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: .1px;
+    margin-bottom: .1px;
+  }
+  .hexagons2 {
+    margin-top: .1px;
+    margin-bottom: .1px;
+    display: flex;
+    gap: 10px;
+    justify-content: left;
+  }
+  .hexagons3 {
+    display: flex;
+    gap: 10px;
+    justify-content: right;
+  }
+  .hexagon {
+    margin-top: .1px;
+    margin-bottom: .1px;
+    width: 60px;
+    border: 1.1px solid #ffffff; /* Borde blanco */
+    height: 60px;
+    background-color: #4fa4fe;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    /* Sombra más fuerte y visible */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6), 0 10px 20px rgba(0, 0, 255, 0.3); /* Sombra más profunda */
+  }
+  
+  
+  
+  .additional-info {
+    padding: 40px;
+    background-color: #f0f0f0;
+    text-align: center;
+  }
+  
+  .info-content h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .info-content p {
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  
+  
+  .butterfly-container {
+    position: relative;
+  }
+  
+  .butterfly {
+    position: absolute;
+    top: 100%; /* Empieza fuera del contenedor */
+    left: -50px; /* Inicia a la izquierda */
+    width: 50px;
+    animation: fly 3s cubic-bezier(0.42, 0, 0.58, 1) forwards; /* Duración aumentada */
+  }
+  
+  @keyframes fly {
+    0% {
+      transform: translate(0, 0) rotate(0deg); /* Empieza desde la esquina */
+    }
+    20% {
+      transform: translate(100px, -100px) rotate(45deg); /* Se eleva y gira */
+    }
+    40% {
+      transform: translate(200px, 50px) rotate(90deg); /* Vuela hacia abajo a la derecha */
+    }
+    60% {
+      transform: translate(300px, -150px) rotate(135deg); /* Sube más alto */
+    }
+    80% {
+      transform: translate(350px, -50px) rotate(180deg); /* Se acerca al destino */
+    }
+    100% {
+      transform: translate(400px, 0) rotate(360deg); /* Llega al lado del texto */
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /* Contenedor principal */
+  .content-container2 {
+    display: flex; /* Coloca los elementos uno al lado del otro */
+    justify-content: space-between; /* Asegura separación entre los divs */
+    align-items: flex-start; /* Alinea elementos al inicio vertical */
+    width: 95%;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: #6ec1e4;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    gap: 20px; /* Espacio entre los divs */
+    margin-top: 30px;
+    margin-bottom: .1px;
+    
+  }
+  
+  /* Título e imagen */
+  .title-image-container {
+    flex: 1; /* Controla el tamaño relativo del contenedor */
+    text-align: center; /* Centra el texto e imagen */
+  }
+  
+  .title-image-container h5 {
+    font-size: 3rem; /* Tamaño del título */
+    color: #ffffff;
+    margin-bottom: 20px; /* Espacio debajo del título */
+    font-weight: bold;
+    margin-top: .1px;
+    margin-bottom: .1px;
+  }
+  
+  .imagen-debajo-del-titulo {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto; /* Centra horizontalmente */
+    display: block;
+    border-radius: 8px; /* Esquinas redondeadas */
+  }
+  
+  
+  
+  .content-container2 p {
+    flex: 2; /* Controla el tamaño relativo del texto */
+    font-size: 1.2rem;
+    color: #666;
+    line-height: 1.6;
+    background-color: #ffffff;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 900px;
+    padding: 30px;
+  }
+  
+  
+  
+  
+  
+  
