@@ -1,0 +1,157 @@
+.planes-main {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f4f4f4;
+  }
+  
+  .planes-header h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #6ec1e4;
+    text-align: center; /* Centrar el texto */
+  }
+  
+  .planes-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .plan {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Asegura que el contenido esté en columna */
+    align-items: center; /* Centra el contenido horizontalmente */
+    justify-content: space-between; /* Ajusta el espacio entre los elementos */
+    margin: 20px;
+    border: 10px solid #6ec1e4; /* Borde azul */
+  }
+  
+  .hexagon {
+    width: 50px;
+    height: 50px;
+    background-color: #4A90E2;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    margin-right: 20px;
+  }
+  
+  .plan-details h2 {
+    font-size: 1.8rem;
+    color: #6ec1e4;
+    text-align: center; /* Centrar el texto */
+    line-height: 0; /* Ajustar la altura de la línea para mejor legibilidad */
+   
+  }
+
+  .plan-details h3 {
+    font-size: 1rem;
+    color: #666;
+    text-align: center; /* Centrar el texto */
+  }
+  
+  .plan-details ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .plan-details ul li {
+    margin-bottom: 10px;
+  }
+
+  
+  .plan-button {
+    background-color: #6ec1e4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%; /* Esto hará que el botón ocupe el 100% del ancho disponible, si prefieres eso */
+    text-align: center; /* Centra el texto dentro del botón */
+    margin-top: 20px; /* Añade espacio superior entre el contenido y el botón */
+  }
+  
+  .plan-button:hover {
+    background-color: #357ABD;
+    
+  }
+
+ 
+  
+
+
+  /* Animación de la mariposa */
+@keyframes flutter {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    25% {
+      transform: translate(-10px, -10px) rotate(10deg);
+    }
+    50% {
+      transform: translate(10px, 10px) rotate(-10deg);
+    }
+    75% {
+      transform: translate(-10px, 10px) rotate(5deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+  }
+  
+  .butterfly-container-planes {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  
+  .butterfly-planes {
+    width: 50px;
+    height: 50px;
+    animation: flutter 2s infinite ease-in-out;
+  }
+  
+  .plan {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 45%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+    border: 10px solid #6ec1e4; /* Borde azul */
+  }
+  
+  .plan-button {
+    background-color: #4A90E2;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    width: 100%; /* Esto hará que el botón ocupe el 100% del ancho disponible, si prefieres eso */
+    text-align: center; /* Centra el texto dentro del botón */
+    margin-top: 20px; /* Añade espacio superior entre el contenido y el botón */
+  }
+  
+  .plan-button:hover {
+    background-color: #357ABD;
+  }
+  
+
+  .plan-details {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  

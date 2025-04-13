@@ -1,0 +1,30 @@
+/* Regla para hacer que las imágenes sean responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Regla para el diseño de contenedores, asegurando que no se desborden */
+  .container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+  
+  /* Media Queries para Responsividad */
+  @media screen and (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  

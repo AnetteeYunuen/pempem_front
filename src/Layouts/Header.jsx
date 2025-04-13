@@ -1,9 +1,18 @@
 import React from 'react';
-import './styles/Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faUser } from '@fortawesome/free-solid-svg-icons';
+import { faUser, faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import { useNavigate } from 'react-router-dom';
+import './styles/Header.css';
+
 
 function Header({ user, onLogout }) {
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    onLogout(); // Ejecuta la función de cierre de sesión
+    navigate('/login'); // Redirige al login
+  };
+
   return (
     <header className="header">
       <div className="logo">
@@ -15,26 +24,19 @@ function Header({ user, onLogout }) {
         <a href="/planes">Planes</a>
       </nav>
       <div className="login">
-        <div className="user-login">
-          {user ? (
-            <>
-              <div className="user-icon-circle">
-                <FontAwesomeIcon icon={faUser} className="user-icon" />
-              </div>
-              <span className="login-text">Bienvenido, {user.email}</span>
-              <button onClick={onLogout} className="logout-button">
-                Cerrar sesión
-              </button>
-            </>
-          ) : (
-            <a href="/login">  {}
-              <div className="user-icon-circle">
-                <FontAwesomeIcon icon={faUser} className="user-icon" />
-              </div>
-              <span className="login-text">Sign In</span>
-            </a>
-          )}
-        </div>
+        {user ? (
+          <div className="user-logged-in">
+            <a href="/Micuenta" className="account-link">Mi Cuenta</a>
+            <span className="welcome-text">Bienvenido, {user.email}</span>
+            <button onClick={handleLogout} className="logout-btn">
+              <FontAwesomeIcon icon={faSignOutAlt} /> Cerrar sesión
+            </button>
+          </div>
+        ) : (
+          <a href="/login" className="login-link">
+            <FontAwesomeIcon icon={faUser} /> Iniciar sesión
+          </a>
+        )}
       </div>
     </header>
   );

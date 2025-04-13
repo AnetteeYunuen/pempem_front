@@ -4,44 +4,49 @@ import { useNavigate } from 'react-router-dom';
 import './RegistroContent.css';
 import imglog from '../../../assets/imglogin.png';
 
-function Registro({ onLogin }) {
+function Registro() {
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false); // Indicador de carga
+    const [loading, setLoading] = useState(false);
     const navigate = useNavigate();
 
-    const handleSubmit = async (e) => {
+    // Función para manejar el registro
+    const handleRegistration = async (e) => {
         e.preventDefault();
         setError('');
-        setLoading(true); // Activa el indicador de carga
+        
+        // Validaciones
+        if (!/^[A-Za-zÁÉÍÓÚáéíóúñÑ ]+$/.test(nombre)) {
+            return setError('El nombre solo debe contener letras');
+        }
+        if (password.length < 8) {
+            return setError('La contraseña debe tener al menos 8 caracteres');
+        }
+        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            return setError('Ingrese un email válido');
+        }
+
+        setLoading(true);
+        
         try {
-            const response = await axios.post('https://pempem.com.mx/backend/login.php', {
+            const response = await axios.post('https://pempem-back2.onrender.com/api/mfa/setup', { email });
+            
+            // Guardar datos temporales
+            localStorage.setItem('mfaData', JSON.stringify({
                 email,
                 password,
-            });
+                nombre,
+                qrUrl: response.data.qrUrl
+            }));
 
-            if (response.data.code === 200) {
-                console.log('Login successful:', response.data);
-                alert('Login successful');
-                onLogin(response.data.user); // Usa la función de inicio de sesión
-                navigate('/'); // Redirige a la ruta deseada
-            }
-        } catch (err) {
-            if (err.response) {
-                // Manejo de errores específicos del backend
-                if (err.response.data.code === 401) {
-                    setError('Invalid credentials');
-                } else {
-                    setError(`Error: ${err.response.data.message || 'Unknown error'}`);
-                }
-            } else {
-                // Manejo de errores de red u otros
-                setError('An error occurred. Please try again later.');
-            }
+            navigate('/MfaSetup');
+            
+        } catch (error) {
+            setError(error.response?.data?.error || 'Error en el registro');
         } finally {
-            setLoading(false); // Desactiva el indicador de carga
+            setLoading(false);
         }
     };
 
@@ -49,48 +54,63 @@ function Registro({ onLogin }) {
         <div className="login-container">
             <div className="login-form">
                 <img src={imglog} alt="Imagen de fondo" className="login-image" />
-                <h2>Login</h2>
-                <form onSubmit={handleSubmit}>
+                <h2>Registro</h2>
+                
+                <form onSubmit={handleRegistration}>
                     <div className="input-group">
                         <label>Nombre:</label>
                         <input
-                            type="nombre"
+                            type="text"
                             value={nombre}
                             onChange={(e) => setNombre(e.target.value)}
+                            placeholder="Ej: Rodrigo Medina"
                             required
                         />
                     </div>
+
                     <div className="input-group">
-                        <label>Email:</label>
+                        <label>Correo:</label>
                         <input
                             type="email"
                             value={email}
                             onChange={(e) => setEmail(e.target.value)}
+                            placeholder="Ej: usuario@dominio.com"
                             required
                         />
                     </div>
+
                     <div className="input-group">
                         <label>Contraseña:</label>
                         <input
                             type="password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
+                            placeholder="Mínimo 8 caracteres"
                             required
                         />
                     </div>
-                    <button type="submit" disabled={loading}>
-                        {loading ? 'Loading...' : 'Iniciar'}
-                    </button>
+
+                    <div className="input-group">
                     <button 
-                        type="button" 
-                        disabled={loading}
-                        onClick={() => navigate('/UsuarioTipo')}
-                    >
-                        {loading ? 'Loading...' : 'Registrarme'}
-                    </button>
-                    
+                            type="button"
+                            className="button"
+                            onClick={() => navigate('/Login')}
+                        >
+                            Volver 
+                        </button>
+                        <button 
+                            type="submit" 
+                            className="button"
+                            disabled={loading}
+                        >
+                            {loading ? 'Procesando...' : 'Registrarme'}
+                        </button>
+                        
+
+                    </div>
+
+                    {error && <div className="error-message">{error}</div>}
                 </form>
-                {error && <p style={{ color: 'red' }}>{error}</p>}
             </div>
         </div>
     );

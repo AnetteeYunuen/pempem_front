@@ -1,12 +1,14 @@
 import React from 'react';
 import MicuentaContent from './Components/MicuentaContent';
 
-function Micuenta() {
+
+const Micuenta = ({ user }) => {
   return (
-    <div>
-      <MicuentaContent />
-    </div>
+    <>
+      <MicuentaContent user={user} />
+
+    </>
   );
-}
+};
 
 export default Micuenta;
